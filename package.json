@@ -1,15 +1,13 @@
 {
   "name": "slothbear_http",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
-    "lint": "eslint **/**.js",
-    "scaffold": "mkdir lib test && touch index.js lib/server.js test/server_test.js README.md .eslintrc.json .gitignore && npm init --yes"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
