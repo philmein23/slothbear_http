@@ -86,7 +86,7 @@ Adds a ```DELETE``` route that handles requests with the passed-in callback. Ret
 
 ### Authors
 This module was built by:
-* [Phillip Nyugen](https://github.com/philmein23)
+* [Phillip Nguyen](https://github.com/philmein23)
 * [Greg Magdsick](https://github.com/gregmagdsick)
 * [Ben Harding](https://github.com/bharding2)
 
