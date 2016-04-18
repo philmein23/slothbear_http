@@ -4,8 +4,8 @@ An HTTP server framework for node.js built to handle http server creation and ro
 ### Contents
 * Getting Started
 * API
-* Server
-* Router
+  * Server
+  * Router
 * Dependencies
 * Authors
 * License
