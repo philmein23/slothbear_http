@@ -1,5 +1,5 @@
 ## Slothbear HTTP
-An HTTP server framework for node.js built to handle server and routing functionality.
+An HTTP server framework for node.js built to handle http server creation and routing functionality.
 
 ### Contents
 * Getting Started
@@ -11,11 +11,11 @@ An HTTP server framework for node.js built to handle server and routing function
 * License
 
 ### Getting Started
-* Install locally to a project by running ` npm install slothbear-http `
-* Import the module into your project by using the following structure: ` var slothbear = require('slothbear-http'); `.  The slothbear variable can be defined using any name you choose, but for the following examples we will use the name slothbear.
+* Install locally to a project by running ` npm install slothbear_http `
+* Import the module into your project by using the following structure: ` var slothbear = require('slothbear_http'); `.  The slothbear variable can be defined using any name you choose, but for the following examples we will use the name slothbear.
 * Here is a quick example on how you would get a server started on port 3000 with ` GET ` and ` POST ` routes:
 ```
-const slothbear = require('slothbear-http');
+const slothbear = require('slothbear_http');
 
 slothbear.router.get('/', (request, response) => {
   response.write('Hello World');
