@@ -41,6 +41,12 @@ describe('testing routes', () => {
       });
       app.server(6265);
   });
+
+  after((done) => {
+    app.close();
+    done();
+  });
+
   it('Successfully handle GET request', (done) => {
     request('localhost:6265')
       .get('/sloth')
@@ -50,6 +56,7 @@ describe('testing routes', () => {
         done();
       });
   });
+
   it('Successfully handle POST request', (done) => {
     request('localhost:6265')
       .post('/sloth')
@@ -60,6 +67,7 @@ describe('testing routes', () => {
         done();
       });
   });
+
   it('Successfully handle PUT request', (done) => {
     request('localhost:6265')
       .put('/sloth')
@@ -70,6 +78,7 @@ describe('testing routes', () => {
         done();
       });
   });
+
   it('Successfully handle PATCH request', (done) => {
     request('localhost:6265')
       .patch('/sloth')
@@ -79,6 +88,7 @@ describe('testing routes', () => {
         done();
       });
   });
+
   it('Successfully handle DELETE request', (done) => {
     request('localhost:6265')
       .delete('/sloth')
