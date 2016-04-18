@@ -34,27 +34,27 @@ describe('testing routes', () => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write('GET method hit on /sloth');
         res.end();
-      });
-      app.router.post('/sloth', (req, res) => {
+      })
+      .post('/sloth', (req, res) => {
         req.on('data', (data) => {
           res.writeHead(200, { 'Content-Type': 'application/json' });
           res.write(data);
           res.end();
         });
-      });
-      app.router.put('/sloth', (req, res) => {
+      })
+      .put('/sloth', (req, res) => {
         req.on('data', (data) => {
           res.writeHead(200, { 'Content-Type': 'application/json' });
           res.write(data);
           res.end();
         });
-      });
-      app.router.patch('/sloth', (req, res) => {
+      })
+      .patch('/sloth', (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write('PATCH method hit on /sloth');
         res.end();
-      });
-      app.router.delete('/sloth', (req, res) => {
+      })
+      .delete('/sloth', (req, res) => {
         res.writeHead(200, { 'Content-Type': 'text/plain' });
         res.write('DELETE method hit on /sloth');
         res.end();
