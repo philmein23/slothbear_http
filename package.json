@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
-    "lint": "eslint **/**.js"
+    "lint": "eslint **/**.js",
+    "scaffold": "mkdir lib test && touch index.js lib/server.js test/server_test.js README.md .eslintrc.json .gitignore && npm init --yes"
   },
   "repository": {
     "type": "git",
