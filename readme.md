@@ -13,7 +13,9 @@ An HTTP server framework for node.js built to handle server and routing function
 ### Getting Started
 * Install locally to a project by running ` npm install slothbear-http `
 * Import the module into your project by using the following structure: ` var slothbear = require('slothbear-http'); `.  The slothbear variable can be defined using any name you choose, but for the following examples we will use the name slothbear.
-* Here is a quick example on how you would get a server started on port 3000 with ` GET ` and ` POST ` routes: ``` const slothbear = require('slothbear-http');
+* Here is a quick example on how you would get a server started on port 3000 with ` GET ` and ` POST ` routes:
+```
+const slothbear = require('slothbear-http');
 
 slothbear.router.get('/', (request, response) => {
   response.write('Hello World');
@@ -24,7 +26,8 @@ slothbear.router.post('/slothbear', (request, response) => {
   response.end();
 });
 
-slothbear.server(3000); ```
+slothbear.server(3000);
+```
 
 ### API
 
@@ -34,7 +37,9 @@ To launch your server, use the ` slothbear.server ` method.  This method takes t
 
 ### Router
 #### slothbear.router
-To set up the routing for your server, use the built in ` slothbear.router `.  The router is already internally linked to the ` slothbear.server ` method, so all you need to do is add your routes directly to the ` slothbear.router ` property.  For example, a simple get request to the "/slothbear" route can be set up like so: ` slothbear.router.get('/slothbear', callback); `.  Further routes can also be added directly to the ` slothbear.router `, or chained together:  ``` slothbear.router.get('/', (request, response) => {
+To set up the routing for your server, use the built in ` slothbear.router `.  The router is already internally linked to the ` slothbear.server ` method, so all you need to do is add your routes directly to the ` slothbear.router ` property.  For example, a simple get request to the "/slothbear" route can be set up like so: ` slothbear.router.get('/slothbear', callback); `.  Further routes can also be added directly to the ` slothbear.router `, or chained together:  
+```
+slothbear.router.get('/', (request, response) => {
     some GET logic
   })
   .get('/sloth', (request, response) => {
@@ -42,22 +47,31 @@ To set up the routing for your server, use the built in ` slothbear.router `.  T
   })
   .post('/bear', (request, response) => {
     some POST logic for the /bear route
-  }); ```
+  });
+```
 
 #### Routing using REST verbs
 ##### slothbear.router.get(path, callback(req, res))
-Adds a ```GET``` route that handles requests with the passed-in callback. Returns the router to allow for method chaining. Example: ``` slothbear.router.get('/index', (req, res) => {
+Adds a ```GET``` route that handles requests with the passed-in callback. Returns the router to allow for method chaining. Example:
+```
+slothbear.router.get('/index', (req, res) => {
   res.write('Hello World');
   res.end();
-}); ```
+});
+```
+
 ##### slothbear.router.post(path, callback(req, res))
-Adds a ```POST``` route that handles requests with the passed-in callback. Return the router to allow for method chaining. Example: ``` slothbear.router.post('/index', (req, res) => {
+Adds a ```POST``` route that handles requests with the passed-in callback. Return the router to allow for method chaining. Example:
+```
+slothbear.router.post('/index', (req, res) => {
   req.on('data', (data) => {
     res.writeHead(200, { 'Content-Type': 'application.json' });
     res.write(data);
     res.end();
   });
-}); ```
+});
+```
+
 ##### slothbear.router.put(path, callback(req, res))
 Adds a ```PUT``` route that handles requests with the passed-in callback. Return the router to allow for method chaining.
 ##### slothbear.router.patch(path, callback(req, res))
